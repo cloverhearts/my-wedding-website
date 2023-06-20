@@ -1,6 +1,5 @@
 <template>
   <section class="main">
-    <strong>드디어</strong>
     <h2>
       09月09日
     </h2>

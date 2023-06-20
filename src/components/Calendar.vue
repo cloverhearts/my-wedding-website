@@ -106,7 +106,7 @@
       <li class="day-off">
         <span class="day-number">30</span>
       </li>
-      <li class="day-off next">
+      <li class="day-off next ">
         <span class="day-number">1</span>
       </li>
       <li class="next">
