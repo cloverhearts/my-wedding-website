@@ -6,10 +6,10 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.use(VueMoment);
+
 new Vue({
   router,
   store,
   render: (h) => h(App),
 }).$mount('#app')
-
-Vue.use(VueMoment);
