@@ -33,6 +33,7 @@ export default {
     min-height: 100vh;
     .intro {
       flex: 1;
+      font-size: 1.8rem;
     }
   }
 </style>

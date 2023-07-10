@@ -2,9 +2,7 @@
   <div class="home">
     <DefaultLayout>
       <HeaderArea/>
-      <MainArea/>
-      <StoryArea/>
-      <InfomationArea/>
+      <IntroduceSection />
       <CalendarArea/>
       <LocationArea/>
       <GalleryArea/>
@@ -17,9 +15,7 @@
 // @ is an alias to /src
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import HeaderArea from '../components/Header.vue'
-import MainArea from '../components/Main.vue'
-import StoryArea from '../components/Story.vue'
-import InfomationArea from '../components/Infomation.vue'
+import IntroduceSection from '../components/Introduce.vue'
 import CalendarArea from '../components/Calendar.vue'
 import LocationArea from '../components/Location.vue'
 import GalleryArea from '../components/Gallery.vue'
@@ -30,9 +26,7 @@ export default {
   components: {
     DefaultLayout,
     HeaderArea,
-    MainArea,
-    StoryArea,
-    InfomationArea,
+    IntroduceSection,
     CalendarArea,
     LocationArea,
     GalleryArea,

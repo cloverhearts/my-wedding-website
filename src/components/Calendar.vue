@@ -1,5 +1,8 @@
 <template>
   <section>
+    <h2>
+      09月09日
+    </h2>
     <ul class="calendar">
       <li class="prev day-off">
         <span class="day-number">27</span>
@@ -138,21 +141,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  min-height: 100vh;
+}
   .calendar{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 1.4rem;
+    padding: 1rem;
     li{
       position:relative;
       list-style: none;
       flex:0 auto;
       width:14.28%;
       height:60px;
+      text-align: center;
       span.day-number{
-        position:absolute;
-        top:0;
-        right:0;
         display: block;
-        width:30px;
         height:30px;
         line-height:30px;
       }
@@ -172,10 +178,21 @@ export default {
         }
       }
       &.d-day{
+        position: relative;
         span.day-number{
-          color:#fff;
-          background:#000;
-          border-radius: 50%;
+          &:after {
+            display: block;
+            position: absolute;
+            color:#fff;
+            background:#000;
+            left: 0.4rem;
+            top: -0.8rem;
+            width: 3.5rem;
+            height: 2.6rem;
+            border-radius: 50%;
+            content: '9';
+            padding-top: 0.9rem;
+          }
         }
       }
     }

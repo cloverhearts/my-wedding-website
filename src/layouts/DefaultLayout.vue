@@ -16,32 +16,36 @@ export default {
 
 <style lang="scss">
 html body {
-  min-width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  padding: 12vw;
+  font-size: 62.5%;
 
   animation: alternate 2s intro-first-animation;
+
   .content {
     display: block;
     position: relative;
     background: #fff;
-    width: 100%;
     max-width: 720px;
-    margin: 3rem auto;
+    margin: 0 auto;
     border-radius: 10px;
 
     &:after {
       display: block;
       position: absolute;
       z-index: -1;
-      top: - 3rem;
-      left: - 3rem;
-      right: - 3rem;
-      bottom: - 3rem;
+      top: -3rem;
+      left: -3rem;
+      right: -3rem;
+      bottom: -3rem;
       border: 3rem solid transparent;
       padding: 15px;
-      border-image-source: url('http://127.0.0.1:8080/lace_border_bg.png');
+      border-image-source: url('//172.30.1.36:8080/lace_border_bg.png');
       border-image-repeat: round;
-      border-image-slice: 100;
+      border-image-slice: 75;
       content: "";
       opacity: 1;
       animation: alternate 1s lace-decoration-animation;

@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="/vendor/sakura/sakura.min.css">
+    <script src="/vendor/sakura/sakura.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(() => {
+          const sakura = new Sakura('body', {
+            minSize: 14,
+            maxSize: 21,
+            fallSpeed: 2,
+            delay: 600
+          });
+          console.log('tick')
+        }, 1000)
+      })
+    </script>
   </head>
   <body>
     <noscript>
