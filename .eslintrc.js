@@ -16,5 +16,6 @@ module.exports = {
   ],
   rules: {
     semi: 'off',
+    'max-len': ['error', { code: 400, ignoreRegExpLiterals: true }],
   },
 };

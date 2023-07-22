@@ -1,5 +1,5 @@
 <template>
-  <section class="introduce-section">
+  <section class="introduce-section" id="introduce">
     <h2>Introduce</h2>
     <div class="comment">
       <p>저희를 아껴주시는 소중한 분들을 모시고</p>
@@ -39,7 +39,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: alternate 2s text-animation;
   .comment {
     flex: 1;
     font-size: 1.16rem;
@@ -64,23 +63,21 @@ export default {
       }
     }
   }
-
-  @keyframes text-animation {
-      0% {
-        opacity: 0;
-        transform: translateY(0);
-        filter:blur(1px);
-      }
-      50% {
-        opacity: 1;
-        transform: translateY(-10px);
-        filter:blur(2px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-        filter:none;
+  &.action{
+    .comment{
+      animation: alternate 2s content-animation;
+    }
+  }
+}
+@media (orientation: landscape) {
+  html body{
+    .content{
+      section#introduce{
+        .comment{
+          padding:0;
+        }
       }
     }
+  }
 }
 </style>

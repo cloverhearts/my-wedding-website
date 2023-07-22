@@ -1,5 +1,5 @@
 <template>
-  <section class="calendar">
+  <section class="calendar" id="calendar">
     <h2>Calendar</h2>
     <h3>
       <strong>2023년 9월 9일 토요일,</strong><br/>
@@ -7,6 +7,13 @@
       <!-- 09月09日 -->
     </h3>
     <ul class="calendar">
+      <li class="day-off">일</li>
+      <li>월</li>
+      <li>화</li>
+      <li>수</li>
+      <li>목</li>
+      <li>금</li>
+      <li>토</li>
       <li class="prev day-off">
         <span class="day-number">27</span>
       </li>
@@ -47,7 +54,7 @@
         <span class="day-number">8</span>
       </li>
       <li class="d-day">
-        <span class="day-number">9</span>
+        <strong class="day-number">9</strong>
       </li>
       <li class="day-off">
         <span class="day-number">10</span>
@@ -167,39 +174,40 @@ export default {
         height:3rem;
         text-align: center;
         font-size:1rem;
-        span.day-number{
+        .day-number{
           display: block;
           height:30px;
           line-height:30px;
         }
         &.prev,&.next{
-          span.day-number{
+          .day-number{
             color: rgba($color: #000000, $alpha: 0.3);
           }
           &.day-off{
-            span.day-number{
+            .day-number{
               color: rgba($color: rgb(255, 70, 70), $alpha: 0.3);
             }
           }
         }
         &.day-off{
-          span.day-number{
+          .day-number{
             color:rgb(255, 70, 70);
           }
         }
         &.d-day{
           position: relative;
-          span.day-number{
+          .day-number{
             color:#fff;
             &:after {
               display: block;
               position: absolute;
               color:#fff;
               background:rgba(206, 159, 111, 0.6);
-              left: -0.2rem;
+              left: 50%;
               top: -0.6rem;
               width: 3rem;
               height: 3rem;
+              margin-left: -1.5rem;
               box-sizing:border-box;
               border-radius: 50%;
               content: '9';
@@ -209,5 +217,10 @@ export default {
         }
       }
     }
+  &.action{
+    h3, ul{
+      animation: alternate 2s content-animation;
+    }
+  }
   }
 </style>

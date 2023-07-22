@@ -32,6 +32,10 @@ html body {
     margin:0;
     padding:0;
   }
+  a{
+    position: relative;
+    z-index:1;
+  }
   animation: alternate 2s intro-first-animation;
   #sakura{
     position:fixed;
@@ -39,6 +43,7 @@ html body {
     bottom:0;
     left:0;
     right:0;
+    z-index:0;
     width:100%;
     height:100%;
     min-height: 100vh;
@@ -57,7 +62,7 @@ html body {
     section{
       min-height:80vh;
       padding: 20vw 5vw;
-      border-bottom:2vw solid rgba(216, 220, 224, 0.6);
+      border-bottom:5px solid rgba(216, 220, 224, 0.6);
       h2{
         margin:0 0 10vw 0;
         &:before,
@@ -74,6 +79,30 @@ html body {
       }
     }
     animation: alternate 2s intro-animation;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 700px) {
+  html body{
+    .content{
+      section{
+        min-height:60vh;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1280px) {
+  html body{
+    .content{
+      section{
+        min-height:60vh;
+        padding:8vw 5vw;
+        h2{
+          margin:0 0 5vw 0;
+        }
+      }
+    }
   }
 }
 
@@ -132,4 +161,19 @@ html body {
     opacity: 1;
   }
 }
+
+@keyframes content-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
