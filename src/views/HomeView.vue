@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <DefaultLayout>
-      <HeaderArea/>
+      <IntroArea/>
       <IntroduceSection />
       <CalendarArea/>
       <LocationArea/>
@@ -14,7 +14,7 @@
 <script>
 // @ is an alias to /src
 import DefaultLayout from '../layouts/DefaultLayout.vue'
-import HeaderArea from '../components/Header.vue'
+import IntroArea from '../components/Intro.vue'
 import IntroduceSection from '../components/Introduce.vue'
 import CalendarArea from '../components/Calendar.vue'
 import LocationArea from '../components/Location.vue'
@@ -25,7 +25,7 @@ export default {
   name: 'HomeView',
   components: {
     DefaultLayout,
-    HeaderArea,
+    IntroArea,
     IntroduceSection,
     CalendarArea,
     LocationArea,

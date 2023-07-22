@@ -11,13 +11,29 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
-          const sakura = new Sakura('body', {
-            minSize: 14,
-            maxSize: 21,
+          const sakura = new Sakura('#sakura', {
+            minSize: 12,
+            maxSize: 18,
             fallSpeed: 2,
-            delay: 600
+            delay: 600,
+            colors: [
+                {
+                    gradientColorStart: 'rgba(255, 222, 197, 0.9)',
+                    gradientColorEnd: 'rgba(255, 222, 208, 0.9)',
+                    gradientColorDegree: 120,
+                },
+                {
+                    gradientColorStart: 'rgba(255,222,189)',
+                    gradientColorEnd: 'rgba(227,222,181)',
+                    gradientColorDegree: 120,
+                },
+                {
+                    gradientColorStart: 'rgba(212,222,163)',
+                    gradientColorEnd: 'rgba(242,222,196)',
+                    gradientColorDegree: 120,
+                },
+            ],
           });
-          console.log('tick')
         }, 1000)
       })
     </script>
@@ -27,6 +43,7 @@
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <div id="sakura"></div>
     <!-- built files will be auto injected -->
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
     <script src='https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js'></script> -->

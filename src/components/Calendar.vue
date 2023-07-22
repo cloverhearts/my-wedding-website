@@ -1,8 +1,11 @@
 <template>
-  <section>
-    <h2>
-      09月09日
-    </h2>
+  <section class="calendar">
+    <h2>Calendar</h2>
+    <h3>
+      <strong>2023년 9월 9일 토요일,</strong><br/>
+      오후 1시 40분 분당앤스퀘어 아모르홀
+      <!-- 09月09日 -->
+    </h3>
     <ul class="calendar">
       <li class="prev day-off">
         <span class="day-number">27</span>
@@ -141,57 +144,67 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  min-height: 100vh;
-}
   .calendar{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    font-size: 1.4rem;
-    padding: 1rem;
-    li{
-      position:relative;
-      list-style: none;
-      flex:0 auto;
-      width:14.28%;
-      height:60px;
-      text-align: center;
-      span.day-number{
-        display: block;
-        height:30px;
-        line-height:30px;
+    padding:10vw 0;
+    h3{
+      font-family: 'Nanum Myeongjo', serif;
+      line-height:1.5;
+      strong{
+        font-size:1.5rem;
       }
-      &.prev,&.next{
+    }
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      font-size: 1.4rem;
+      padding: 2rem;
+      li{
+        position:relative;
+        list-style: none;
+        flex:0 auto;
+        width:14.28%;
+        height:3rem;
+        text-align: center;
+        font-size:1rem;
         span.day-number{
-          color: rgba($color: #000000, $alpha: 0.3);
+          display: block;
+          height:30px;
+          line-height:30px;
+        }
+        &.prev,&.next{
+          span.day-number{
+            color: rgba($color: #000000, $alpha: 0.3);
+          }
+          &.day-off{
+            span.day-number{
+              color: rgba($color: rgb(255, 70, 70), $alpha: 0.3);
+            }
+          }
         }
         &.day-off{
           span.day-number{
-            color: rgba($color: #f00, $alpha: 0.3);
+            color:rgb(255, 70, 70);
           }
         }
-      }
-      &.day-off{
-        span.day-number{
-          color:#f00;
-        }
-      }
-      &.d-day{
-        position: relative;
-        span.day-number{
-          &:after {
-            display: block;
-            position: absolute;
+        &.d-day{
+          position: relative;
+          span.day-number{
             color:#fff;
-            background:#000;
-            left: 0.4rem;
-            top: -0.8rem;
-            width: 3.5rem;
-            height: 2.6rem;
-            border-radius: 50%;
-            content: '9';
-            padding-top: 0.9rem;
+            &:after {
+              display: block;
+              position: absolute;
+              color:#fff;
+              background:rgba(206, 159, 111, 0.6);
+              left: -0.2rem;
+              top: -0.6rem;
+              width: 3rem;
+              height: 3rem;
+              box-sizing:border-box;
+              border-radius: 50%;
+              content: '9';
+              padding-top: 0.7rem;
+            }
           }
         }
       }

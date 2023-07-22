@@ -1,5 +1,6 @@
 <template>
   <section class="introduce-section">
+    <h2>Introduce</h2>
     <div class="comment">
       <p>저희를 아껴주시는 소중한 분들을 모시고</p>
       <p>서약하는 자리를 마련하고자 합니다</p>
@@ -9,10 +10,10 @@
       <p class="empty"></p>
       <div class="honey">
         <p>
-          임현택∙김순동의 장남 채성
+          <strong>임현택∙김순동</strong>의 장남 <strong>채성</strong>
         </p>
         <p>
-          이용만∙장영애의 장녀 수진
+          <strong>이용만∙장영애</strong>의 장녀 <strong>수진</strong>
         </p>
       </div>
     </div>
@@ -35,14 +36,15 @@ export default {
 <style scoped lang="scss">
 .introduce-section {
   display: flex;
-  min-height: 100vh;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10vw;
-  font-size: 1.2rem;
+  animation: alternate 2s text-animation;
   .comment {
     flex: 1;
+    font-size: 1.16rem;
+    font-family: 'Nanum Myeongjo', serif;
+    padding: 20vw 0;
     p {
       margin: 0.5rem 0;
     }
@@ -54,10 +56,31 @@ export default {
 
     .honey {
       p {
-        margin: 1rem 0;
+        margin: 2rem 0;
+        font-size: 1rem;
+        strong{
+          font-size: 1.18rem;
+        }
       }
     }
   }
 
+  @keyframes text-animation {
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+        filter:blur(1px);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-10px);
+        filter:blur(2px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter:none;
+      }
+    }
 }
 </style>

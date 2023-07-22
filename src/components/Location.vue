@@ -44,7 +44,7 @@ export default {
 .wedding-hall-location {
   & iframe {
     width: 100%;
-    min-height: 50vh;
+    min-height: 80vh;
   }
 }
 </style>

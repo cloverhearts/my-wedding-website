@@ -1,5 +1,5 @@
 <template>
-  <main class="content" ref="sakura">
+  <main class="content">
     <slot />
   </main>
 </template>
@@ -15,16 +15,38 @@ export default {
 </script>
 
 <style lang="scss">
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+.nanummyeongjo * {
+ font-family: 'Nanum Myeongjo', serif;
+}
 html body {
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: thin;
-  padding: 12vw;
+  margin: 0;
+  padding: 0;
   font-size: 62.5%;
-
+  p{
+    margin:0;
+    padding:0;
+  }
   animation: alternate 2s intro-first-animation;
-
+  #sakura{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:100%;
+    min-height: 100vh;
+    overflow:hidden;
+    .sakura{
+      z-index:0;
+    }
+  }
   .content {
     display: block;
     position: relative;
@@ -32,27 +54,24 @@ html body {
     max-width: 720px;
     margin: 0 auto;
     border-radius: 10px;
-
-    &:after {
-      display: block;
-      position: absolute;
-      z-index: -1;
-      top: -3rem;
-      left: -3rem;
-      right: -3rem;
-      bottom: -3rem;
-      border: 3rem solid transparent;
-      padding: 15px;
-      border-image-source: url('//172.30.1.36:8080/lace_border_bg.png');
-      border-image-repeat: round;
-      border-image-slice: 75;
-      content: "";
-      opacity: 1;
-      animation: alternate 1s lace-decoration-animation;
-    }
-    & .intro {
-      opacity: 1 !important;
-      animation: alternate 2s intro-content-animation;
+    section{
+      min-height:80vh;
+      padding: 20vw 5vw;
+      border-bottom:2vw solid rgba(216, 220, 224, 0.6);
+      h2{
+        margin:0 0 10vw 0;
+        &:before,
+        &:after{
+          content: "";
+          display:inline-block;
+          width:0.3rem;
+          height:0.3rem;
+          margin:0 1rem;
+          border-radius:50%;
+          background:rgba(206, 159, 111, 0.6);
+          vertical-align: middle;
+        }
+      }
     }
     animation: alternate 2s intro-animation;
   }
@@ -78,12 +97,15 @@ html body {
 @keyframes intro-content-animation {
   0% {
     color: #ffffff;
+    border-color:#ffffff;
   }
   30% {
     color: #ffffff;
+    border-color:#ffffff;
   }
   100% {
     color: inherit;
+    border-color:#ffffff;
   }
 }
 
