@@ -28,6 +28,7 @@ html body {
   margin: 0;
   padding: 0;
   font-size: 62.5%;
+  animation: alternate 2s intro-first-animation;
   p{
     margin:0;
     padding:0;
@@ -36,7 +37,6 @@ html body {
     position: relative;
     z-index:1;
   }
-  animation: alternate 2s intro-first-animation;
   #sakura{
     position:fixed;
     top:0;
@@ -107,6 +107,7 @@ html body {
 
 @keyframes intro-first-animation {
   0% {
+    opacity: 0;
     background: black;
     border-color: transparent;
   }

@@ -55,11 +55,11 @@ export default {
     align-items: flex-start;
     justify-content: center;
     box-sizing:border-box;
-    min-height: 100vh;
+    min-height: 92vh;
     padding: 3rem;
     background: transparent url("../assets/wedding-main.jpeg") no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
     .intro {
       overflow:hidden;
@@ -117,7 +117,7 @@ export default {
       .wedding-name {
         overflow:hidden;
         position:absolute;
-        bottom: 6rem;
+        bottom: 3rem;
         left:0;
         width:100%;
         font-family: 'Nanum Myeongjo', serif;
@@ -132,16 +132,19 @@ export default {
         }
         .sujin{
           color:#fff;
+          text-shadow: #000 1px 1px 5px;
         }
       }
 
       .scroll-down{
         position: absolute;
-        bottom: -1.5rem;
+        bottom: -4vh;
         left: 0;
         width: 100%;
-        padding: 1rem 0;
+        height:5vh;
+        padding: 0;
         background: transparent;
+          animation: alternate 2s intro-day-animation;
 
         @media (orientation: portrait) {
           padding: 0;
@@ -255,27 +258,29 @@ export default {
   @media (min-width: 700px) and (max-width: 3000px) {
     section#intro{
       padding-top:2vw;
-      background-size:80vh;
-      background-position: center top;
-      text-shadow: #000000 1px 1px 5px;
+      background-size:76vh;
+      background-position: center 100%;
+      text-shadow: #fff 1px 1px 5px;
       .intro{
         .wedding-title{
           padding-bottom:1vw;
-          text-shadow: #000000 1px 1px 5px;
+          text-shadow: #fff 1px 1px 5px;
         }
         .wedding-name{
           letter-spacing: 0.6vw;
-          bottom:3rem;
-          text-shadow: #000000 1px 1px 5px;
+          bottom:8vh;
+          text-shadow: #fff 1px 1px 5px;
         }
       }
     }
   }
   @media (orientation: landscape) and (max-width: 920px) {
     section#intro{
-      padding-top: calc(50vh - 5.5rem);
+      padding-top: calc(50vh - 5.2rem);
       background-position: center -30vw;
-      background-size:80vw;
+      background-size:76vw;
+      background-position:center -60vh;
+      min-height:90vh;
       .intro{
         .wedding-title,
         .wedding-title span,
@@ -290,8 +295,21 @@ export default {
           margin-bottom:0.5rem;
           padding-bottom:0.2rem;
         }
+        .wedding-title,
+        .wedding-day,
+        .d-day{
+          transform:scale(0.9);
+        }
         .wedding-name{
+          bottom:10vh;
           text-shadow: none
+        }
+        .scroll-down{
+          bottom:-6vh;
+          .scroll-round{
+            left:40%;
+            width:20%;
+          }
         }
         .landscape{
           color:#333;

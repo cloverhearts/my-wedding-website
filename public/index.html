@@ -14,7 +14,38 @@
       <meta property="og:url" content="http://https://wedding.cloverhearts.com/">
       <meta property="og:title" content="임채성♡이수진의 모바일청첩장입니다">
       <meta property="og:image" content="<%= BASE_URL %>gallery1.jpeg">
-      <meta property="og:description" content="임채성♡이수진 23년 9월 9일 분당앤스퀘어 오후 1시 40분">
+      <meta property="og:description" content="9월 9일 분당앤스퀘어 오후 1시 40분">
+      <link rel="stylesheet" href="/vendor/sakura/sakura.min.css">
+      <script src="/vendor/sakura/sakura.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+                setTimeout(() => {
+                  const sakura = new Sakura('#sakura', {
+                    minSize: 12,
+                    maxSize: 18,
+                    fallSpeed: 2,
+                    delay: 600,
+                    colors: [
+                        {
+                            gradientColorStart: 'rgba(255, 222, 197, 0.9)',
+                            gradientColorEnd: 'rgba(255, 222, 208, 0.9)',
+                            gradientColorDegree: 120,
+                        },
+                        {
+                            gradientColorStart: 'rgba(255,222,189)',
+                            gradientColorEnd: 'rgba(230,193,135)',
+                            gradientColorDegree: 120,
+                        },
+                        {
+                            gradientColorStart: 'rgba(222,210,163)',
+                            gradientColorEnd: 'rgba(222,193,163)',
+                            gradientColorDegree: 120,
+                        },
+                    ],
+                  });
+                }, 1000)
+              })
+      </script>
   </head>
   <body>
     <noscript>
