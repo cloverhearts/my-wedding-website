@@ -55,11 +55,11 @@ export default {
     align-items: flex-start;
     justify-content: center;
     box-sizing:border-box;
-    min-height: 90vh;
+    min-height: 92vh;
     padding: 3rem;
     background: transparent url("../assets/wedding-main.jpeg") no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
     .intro {
       overflow:hidden;
@@ -258,8 +258,8 @@ export default {
   @media (min-width: 700px) and (max-width: 3000px) {
     section#intro{
       padding-top:2vw;
-      background-size:80vh;
-      background-position: center top;
+      background-size:76vh;
+      background-position: center 100%;
       text-shadow: #fff 1px 1px 5px;
       .intro{
         .wedding-title{

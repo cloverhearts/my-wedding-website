@@ -28,6 +28,7 @@ html body {
   margin: 0;
   padding: 0;
   font-size: 62.5%;
+  animation: alternate 2s intro-first-animation;
   p{
     margin:0;
     padding:0;
@@ -59,7 +60,6 @@ html body {
     margin: 0 auto;
     border-radius: 10px;
     section{
-      animation: alternate 2s intro-first-animation;
       min-height:80vh;
       padding: 10rem 5vw;
       h2{
@@ -107,6 +107,7 @@ html body {
 
 @keyframes intro-first-animation {
   0% {
+    opacity: 0;
     background: black;
     border-color: transparent;
   }
