@@ -36,7 +36,6 @@ html body {
     position: relative;
     z-index:1;
   }
-  animation: alternate 2s intro-first-animation;
   #sakura{
     position:fixed;
     top:0;
@@ -60,6 +59,7 @@ html body {
     margin: 0 auto;
     border-radius: 10px;
     section{
+      animation: alternate 2s intro-first-animation;
       min-height:80vh;
       padding: 10rem 5vw;
       h2{
