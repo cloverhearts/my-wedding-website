@@ -248,7 +248,7 @@ export default {
     section#intro{
       padding-top:2vw;
       background-color:#fff4cc;
-      background-size:700px;
+      background-size:70vh;
       background-position:center bottom;
       .intro{
         .wedding-title{
@@ -256,11 +256,12 @@ export default {
         }
         .wedding-name{
           letter-spacing: 0.6vw;
+          bottom:5rem;
         }
       }
     }
   }
-  @media (orientation: landscape) and (max-width: 1000px) {
+  @media (orientation: landscape) and (max-width: 920px) {
     section#intro{
       padding-top:20vw;
       background-color:#fff4cc;

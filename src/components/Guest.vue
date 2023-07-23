@@ -335,4 +335,30 @@ export default {
     }
   }
 }
+  @media (max-width: 280px) {
+  html body{
+    .content{
+      section#guest{
+        .guest-form{
+          .guest-input{
+            flex-direction: row;
+            flex-wrap:wrap;
+            input[type="text"]{
+              &#name,
+              &#comment{
+                box-sizing: border-box;
+                width:100%;
+                margin:0.5rem 0;
+              }
+            }
+            button{
+              width:100%;
+              margin:1rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>
