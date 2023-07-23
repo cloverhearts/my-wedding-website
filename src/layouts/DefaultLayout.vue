@@ -62,7 +62,6 @@ html body {
     section{
       min-height:80vh;
       padding: 10rem 5vw;
-      border-bottom:5px solid rgba(216, 220, 224, 0.6);
       h2{
         margin:0 0 6vw 0;
         &:before,

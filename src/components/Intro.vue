@@ -57,7 +57,7 @@ export default {
     box-sizing:border-box;
     min-height: 100vh;
     padding: 3rem;
-    background: #d8dce0 url("../assets/wedding-main.jpeg") no-repeat;
+    background: transparent url("../assets/wedding-main.jpeg") no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -112,12 +112,12 @@ export default {
         animation: alternate 2s intro-title-animation;
         font-family: 'Nanum Myeongjo', serif;
         font-size:1.2rem;
-        text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+        text-shadow: #ffffff 1px 1px 5px;
       }
       .wedding-name {
         overflow:hidden;
         position:absolute;
-        bottom:2.5rem;
+        bottom: 6rem;
         left:0;
         width:100%;
         font-family: 'Nanum Myeongjo', serif;
@@ -140,14 +140,22 @@ export default {
         bottom: -1.5rem;
         left: 0;
         width: 100%;
-        padding:0.8rem 0;
-        background: #fff;
+        padding: 1rem 0;
+        background: transparent;
+
+        @media (orientation: portrait) {
+          padding: 0;
+        }
+
         .scroll-round{
           position: absolute;
-          bottom: -1rem;
+          bottom: 0rem;
           left: 30%;
           width:40%;
           margin:0 auto;
+          @media (orientation: portrait) {
+            bottom: 0;
+          }
         }
         svg{
           position: absolute;
@@ -247,24 +255,25 @@ export default {
   @media (min-width: 700px) and (max-width: 3000px) {
     section#intro{
       padding-top:2vw;
-      background-color:#fff4cc;
-      background-size:70vh;
-      background-position:center bottom;
+      background-size:80vh;
+      background-position: center top;
+      text-shadow: #000000 1px 1px 5px;
       .intro{
         .wedding-title{
           padding-bottom:1vw;
+          text-shadow: #000000 1px 1px 5px;
         }
         .wedding-name{
           letter-spacing: 0.6vw;
-          bottom:5rem;
+          bottom:3rem;
+          text-shadow: #000000 1px 1px 5px;
         }
       }
     }
   }
   @media (orientation: landscape) and (max-width: 920px) {
     section#intro{
-      padding-top:20vw;
-      background-color:#fff4cc;
+      padding-top: calc(50vh - 5.5rem);
       background-position: center -30vw;
       background-size:80vw;
       .intro{
@@ -275,6 +284,7 @@ export default {
         .wedding-name{
           color:#fff;
           border-color:#fff;
+          text-shadow: #000000 1px 1px 5px;
         }
         .wedding-title{
           margin-bottom:0.5rem;
