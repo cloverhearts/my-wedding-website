@@ -23,13 +23,6 @@
 <script>
 export default {
   name: 'IntroduceSection',
-  props: {
-
-  },
-  data() {
-  },
-  computed: {
-  },
 }
 </script>
 

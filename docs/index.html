@@ -1,1 +1,29 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>my-wedding-website</title><script defer="defer" src="/js/chunk-vendors.612d07d0.js"></script><script defer="defer" src="/js/app.0e63d8be.js"></script><link href="/css/app.3734536c.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but my-wedding-website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
+<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>my-wedding-website</title><link rel="stylesheet" href="/vendor/sakura/sakura.min.css"><script src="/vendor/sakura/sakura.min.js"></script><script>document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(() => {
+          const sakura = new Sakura('#sakura', {
+            minSize: 12,
+            maxSize: 18,
+            fallSpeed: 2,
+            delay: 600,
+            colors: [
+                {
+                    gradientColorStart: 'rgba(255, 222, 197, 0.9)',
+                    gradientColorEnd: 'rgba(255, 222, 208, 0.9)',
+                    gradientColorDegree: 120,
+                },
+                {
+                    gradientColorStart: 'rgba(255,222,189)',
+                    gradientColorEnd: 'rgba(230,193,135)',
+                    gradientColorDegree: 120,
+                },
+                {
+                    gradientColorStart: 'rgba(222,210,163)',
+                    gradientColorEnd: 'rgba(222,193,163)',
+                    gradientColorDegree: 120,
+                },
+            ],
+          });
+        }, 1000)
+      })</script><script defer="defer" src="/js/chunk-vendors.02559245.js"></script><script defer="defer" src="/js/app.800b3e5f.js"></script><link href="/css/app.81cc8752.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but my-wedding-website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><div id="sakura"></div><script>(function(){
+        // $('.content').sakura();
+      })();</script></body></html>
