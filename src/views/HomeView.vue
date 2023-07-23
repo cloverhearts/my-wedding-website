@@ -7,6 +7,7 @@
       <LocationArea/>
       <GalleryArea/>
       <GuestArea/>
+      <ThanksFor />
     </DefaultLayout>
   </div>
 </template>
@@ -20,6 +21,7 @@ import CalendarArea from '../components/Calendar.vue'
 import LocationArea from '../components/Location.vue'
 import GalleryArea from '../components/Gallery.vue'
 import GuestArea from '../components/Guest.vue'
+import ThanksFor from '../components/ThanksFor.vue'
 
 export default {
   name: 'HomeView',
@@ -31,6 +33,7 @@ export default {
     LocationArea,
     GalleryArea,
     GuestArea,
+    ThanksFor
   },
   data() {
     return {

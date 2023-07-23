@@ -76,7 +76,8 @@
       <div class="alert-content">
         <span class="icon bridegroom"></span>
         <span class="icon bride"></span><br/>
-        <p>축하메세지를 남겨주셔서 감사합니다.</p>
+        <p>축하메세지를 남겨주셔서</p>
+        <p>감사합니다</p>
         <p>이쁘게 잘 살겠습니다.</p>
         <p>채성,수진 올림</p>
         <button
@@ -328,7 +329,7 @@ export default {
             width:320px;
             height:200px;
             min-width:320px;
-            min-height:200px;
+            min-height:220px;
           }
         }
       }
