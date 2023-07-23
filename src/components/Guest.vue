@@ -1,9 +1,9 @@
 <template>
   <section id="guest">
     <h2>Guest</h2>
-    <div class="guest-list">
-      <ul v-if="items">
-        <li v-for="(item ,index) in items" :key="`comment${index}`">
+    <div class="guest-list" v-if="items">
+      <ul v-if="items" :style="`width:${contentWidth * Object.entries(items).length}px;`">
+        <li v-for="(item ,index) in items" :key="`comment${index}`"  :style="`width:${contentWidth}px;`">
           <span class="icon" :class="item.target">{{ (item.target === 'bridegroom')? '채성': '수진'}}에게</span>
           {{ item.name }} : {{ item.comment }}
         </li>
@@ -106,11 +106,13 @@ export default {
       // password: '',
       comment: '',
       send: false,
+      contentWidth: 0,
     }
   },
   mounted() {
     if (this.$firebaseDB) {
       this.fetchData();
+      this.contentWidth = (window.outerWidth >= 900) ? 615 : window.outerWidth;
     }
   },
   methods: {
@@ -158,7 +160,6 @@ export default {
           target: this.target,
           comment: this.comment,
         };
-        console.log(postData, newPostKey);
         const updates = {};
         updates[`/guests/${newPostKey}`] = postData;
         update(ref(this.$firebaseDB), updates);
@@ -180,18 +181,28 @@ export default {
     font-size:1rem;
     .guest-list{
       position:relative;
-      /* overflow:hidden;
-      overflow-x:auto; */
+      z-index:1;
+      overflow:hidden;
       width:100%;
-      /* height:5rem; */
+      height:5rem;
       margin-bottom:2rem;
       border:1px solid #ddd;
       border-radius: 1rem;
+      &:hover ul{
+        animation-play-state: paused;
+        cursor: pointer;
+      }
       ul{
-        overflow:hidden;
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        position:absolute;
+        left:0;
+        animation: infinite 80s guest-animation;
         margin:0;
         padding:0;
         li{
+          flex:1 auto;
           list-style:none;
           line-height:5rem;
         }
@@ -294,7 +305,8 @@ export default {
         left:50%;
         z-index:10;
         min-width:60vw;
-        min-height:50vw;
+        min-height:58vw;
+        max-height:70vw;
         transform: translate(-50%, -50%);
         padding:1rem;
         background:#fff;
@@ -320,6 +332,16 @@ export default {
     overflow:hidden;
   }
 
+  @keyframes guest-animation {
+      0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
   @media (min-width: 700px) and (max-width: 1280px) {
   html body{
     .content{
