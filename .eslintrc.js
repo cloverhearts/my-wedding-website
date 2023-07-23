@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     semi: 'off',
     'linebreak-style': 0,
+    'no-alert': 0,
     'no-console': 0,
     'no-debugger': 0,
     'comma-dangle': 0,

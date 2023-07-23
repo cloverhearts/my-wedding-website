@@ -47,9 +47,9 @@ export default {
     }
   },
   mounted() {
-    document.addEventListener('scroll', this.scrollEvents);
-    this.scrollPosition = this.sectionList.map((s) => ((document.querySelector(`${s}`).offsetTop <= 300) ? document.querySelector(`${s}`).offsetTop : document.querySelector(`${s}`).offsetTop - 200));
-    this.scrollPosition.push(document.querySelector('body').getBoundingClientRect().height);
+    // document.addEventListener('scroll', this.scrollEvents);
+    // this.scrollPosition = this.sectionList.map((s) => ((document.querySelector(`${s}`).offsetTop <= 300) ? document.querySelector(`${s}`).offsetTop : document.querySelector(`${s}`).offsetTop - 200));
+    // this.scrollPosition.push(document.querySelector('body').getBoundingClientRect().height);
   },
   methods: {
     scrollEvents() {

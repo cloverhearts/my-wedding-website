@@ -56,7 +56,7 @@ export default {
     justify-content: center;
     box-sizing:border-box;
     min-height: 100vh;
-    padding: 10vw 5vw;
+    padding: 15vw 5vw;
     background: #d8dce0 url("../assets/wedding-main.jpeg") no-repeat;
     background-size: cover;
     background-position: center;
@@ -242,7 +242,24 @@ export default {
       }
     }
   }
-  @media (orientation: landscape) and (max-width: 700px) {
+
+  @media (min-width: 700px) and (max-width: 3000px) {
+    section#intro{
+      padding-top:2vw;
+      background-color:#fff4cc;
+      background-size:540px;
+      background-position:center bottom;
+      .intro{
+        .wedding-title{
+          padding-bottom:1vw;
+        }
+        .wedding-name{
+          letter-spacing: 0.6vw;
+        }
+      }
+    }
+  }
+  @media (orientation: landscape) and (max-width: 1000px) {
     section#intro{
       padding-top:20vw;
       background-color:#fff4cc;
@@ -264,23 +281,6 @@ export default {
         }
         .landscape{
           color:#333;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 700px) and (max-width: 3000px) {
-    section#intro{
-      padding-top:2vw;
-      background-color:#fff4cc;
-      background-size:540px;
-      background-position:center bottom;
-      .intro{
-        .wedding-title{
-          padding-bottom:1vw;
-        }
-        .wedding-name{
-          letter-spacing: 0.6vw;
         }
       }
     }

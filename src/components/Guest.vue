@@ -9,7 +9,9 @@
         </li>
       </ul>
       <p v-else class="guest-empty">
-        축하 메세지가 없습니다. 첫 축하메세지를 작성해 주세요.
+        <span class="icon bridegroom"></span>
+        <span class="icon bride"></span><br/>
+        첫 축하메세지를 작성해 주세요.
       </p>
     </div>
     <div class="guest-form">
@@ -21,6 +23,7 @@
           id="bridegroom"
           value="bridegroom" />
         <label for="bridegroom">
+          <span class="icon bridegroom"></span>
           신랑에게
         </label>
         <input
@@ -30,6 +33,7 @@
           id="bride"
           value="bride"/>
         <label for="bride">
+          <span class="icon bride"></span>
           신부에게
         </label>
       </fieldset>
@@ -58,14 +62,20 @@
       <button
         type="button"
         class="guest-button"
-        @click="guestAddComment"
+        @click="sendAlertOpen"
       >
         전송
       </button>
       </fieldset>
     </div>
-    <div class="send-alert" v-if="seand">
+    <div
+      v-if="send"
+      class="send-alert"
+      @click="closeAlert"
+    >
       <div class="alert-content">
+        <span class="icon bridegroom"></span>
+        <span class="icon bride"></span><br/>
         <p>축하메세지를 남겨주셔서 감사합니다.</p>
         <p>이쁘게 잘 살겠습니다.</p>
         <p>채성,수진 올림</p>
@@ -94,7 +104,7 @@ export default {
       name: '',
       // password: '',
       comment: '',
-      seand: false,
+      send: false,
     }
   },
   mounted() {
@@ -112,7 +122,32 @@ export default {
         alert('게시물을 읽어오지 못했습니다.');
       }
     },
-    // eslint-disable-next-line consistent-return
+    sendAlertOpen() {
+      let next = false;
+      let returnType = '';
+      console.log(this.name, this.comment, this.target);
+      if (!this.name || this.name.length === 0) {
+        returnType = '이름을 입력해 주세요.';
+        next = true;
+      } else if (!this.comment || this.comment.length === 0) {
+        returnType = '메세지를 입력해 주세요.';
+        next = true;
+      } else if (!this.target) {
+        returnType = '누구에게 보내는지 선택해주세요.';
+        next = true;
+      }
+
+      if (next) {
+        alert(`${returnType}`)
+      } else {
+        this.send = true;
+        document.querySelector('body').classList.add('lock');
+      }
+      // console.log('sendAlertOpen');
+    },
+    closeAlert() {
+      this.guestAddComment();
+    },
     async guestAddComment() {
       try {
         this.id = this.items?.length || 0;
@@ -125,8 +160,9 @@ export default {
         console.log(postData, newPostKey);
         const updates = {};
         updates[`/guests/${newPostKey}`] = postData;
-        this.send = true;
-        return update(ref(this.$firebaseDB), updates);
+        update(ref(this.$firebaseDB), updates);
+
+        this.send = false;
       } catch (ex) {
         alert('게시물을 읽어오지 못했습니다.');
       }
@@ -154,31 +190,32 @@ export default {
         li{
           list-style:none;
           line-height:5rem;
-          .icon{
-            overflow:hidden;
-            display:inline-block;
-            width:3rem;
-            height:3rem;
-            border-radius: 3rem;
-            box-shadow:0 0 1px rgba(0,0,0,0.2);
-            text-indent:-1000em;
-            font-size:0;
-            vertical-align: middle;
-            &.bridegroom{
-              background:url('../assets/icon-sung.png') no-repeat center;
-              background-size:cover;
-            }
-            &.bride{
-              background:url('../assets/icon-jin.png') no-repeat center;
-              background-size:cover;
-            }
-          }
         }
       }
     }
+    .icon{
+      overflow:hidden;
+      display:inline-block;
+      width:3rem;
+      height:3rem;
+      border-radius: 3rem;
+      box-shadow:0 0 1px rgba(0,0,0,0.2);
+      text-indent:-1000em;
+      font-size:0;
+      vertical-align: middle;
+      &.bridegroom{
+        background:url('../assets/icon-sung.png') no-repeat center;
+        background-size:cover;
+      }
+      &.bride{
+        background:url('../assets/icon-jin.png') no-repeat center;
+        background-size:cover;
+      }
+    }
     .guest-empty{
+      padding:0.5rem;
       font-family: 'Nanum Myeongjo', serif;
-      line-height:5rem;
+      line-height:1.6;
     }
     .guest-form{
       position: relative;
@@ -241,17 +278,27 @@ export default {
       overflow:hidden;
       box-sizing: border-box;
       position:fixed;
-      top:50%;
-      left:50%;
-      width:80vw;
-      min-height:40vw;
-      margin:-20vw 0 0 -40vw;
-      padding:10vw;
-      background:#fff;
-      border:1px solid #ddd;
-      border-radius: 1rem;
-      font-size:1rem;
-      line-height:2;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      z-index:10;
+      background: rgba($color: #000000, $alpha: 0.3);
+      .alert-content{
+        position:fixed;
+        top:50%;
+        left:50%;
+        z-index:10;
+        min-width:60vw;
+        min-height:50vw;
+        transform: translate(-50%, -50%);
+        padding:1rem;
+        background:#fff;
+        border:1px solid #ddd;
+        border-radius: 1rem;
+        font-size:1rem;
+        line-height:2;
+      }
       .alert-button{
         position:absolute;
         bottom:0;
@@ -259,9 +306,30 @@ export default {
         right:0;
         padding:1rem;
         border:none;
+        border-radius: 1rem;
         border-top:1px solid #ddd;
         background:#fff;
       }
     }
   }
+  body.lock{
+    overflow:hidden;
+  }
+
+  @media (min-width: 700px) and (max-width: 1280px) {
+  html body{
+    .content{
+      section#guest{
+        .send-alert{
+          .alert-content{
+            width:320px;
+            height:200px;
+            min-width:320px;
+            min-height:200px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
