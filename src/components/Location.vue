@@ -40,9 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .location{
-  font-size:1rem;
   line-height:2;
-
   h3{
       font-family: 'Nanum Myeongjo', serif;
       line-height:1.5;
@@ -52,6 +50,7 @@ export default {
       }
     }
   .location-description {
+    font-size:1rem;
     img{
       width:100%;
     }

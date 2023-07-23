@@ -34,9 +34,9 @@ export default {
   align-items: center;
   .comment {
     flex: 1;
-    font-size: 1.16rem;
+    font-size: 1.1rem;
     font-family: 'Nanum Myeongjo', serif;
-    padding: 20vw 0;
+    padding: 10vw 0;
     p {
       margin: 0.5rem 0;
     }

@@ -163,6 +163,9 @@ export default {
         update(ref(this.$firebaseDB), updates);
 
         this.send = false;
+        this.comment = '';
+        this.name = '';
+        this.target = 'bridegroom';
       } catch (ex) {
         alert('게시물을 읽어오지 못했습니다.');
       }

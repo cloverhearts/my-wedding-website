@@ -61,10 +61,10 @@ html body {
     border-radius: 10px;
     section{
       min-height:80vh;
-      padding: 20vw 5vw;
+      padding: 10rem 5vw;
       border-bottom:5px solid rgba(216, 220, 224, 0.6);
       h2{
-        margin:0 0 10vw 0;
+        margin:0 0 6vw 0;
         &:before,
         &:after{
           content: "";

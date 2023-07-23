@@ -56,7 +56,7 @@ export default {
     justify-content: center;
     box-sizing:border-box;
     min-height: 100vh;
-    padding: 15vw 5vw;
+    padding: 3rem;
     background: #d8dce0 url("../assets/wedding-main.jpeg") no-repeat;
     background-size: cover;
     background-position: center;
@@ -73,7 +73,7 @@ export default {
         border-bottom:1px solid rgba(51,51,51,0.5);
         font-family: 'Nanum Myeongjo', serif;
         font-weight:bold;
-        text-shadow: 0 0 1vw rgba(255, 255, 255, 0.2);
+        text-shadow: 0 0 2px rgba(255, 255, 255, 1);
         animation: alternate 2s intro-title-animation;
         span{
           display:block;
@@ -112,6 +112,7 @@ export default {
         animation: alternate 2s intro-title-animation;
         font-family: 'Nanum Myeongjo', serif;
         font-size:1.2rem;
+        text-shadow: 0 0 2px rgba(255, 255, 255, 1);
       }
       .wedding-name {
         overflow:hidden;
@@ -247,7 +248,7 @@ export default {
     section#intro{
       padding-top:2vw;
       background-color:#fff4cc;
-      background-size:540px;
+      background-size:700px;
       background-position:center bottom;
       .intro{
         .wedding-title{
@@ -273,11 +274,13 @@ export default {
         .wedding-name{
           color:#fff;
           border-color:#fff;
-          text-shadow: 0 0 1px rgab(0,0,0,0.8);
         }
         .wedding-title{
           margin-bottom:0.5rem;
           padding-bottom:0.2rem;
+        }
+        .wedding-name{
+          text-shadow: none
         }
         .landscape{
           color:#333;
