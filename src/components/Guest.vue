@@ -2,8 +2,8 @@
   <section id="guest">
     <h2>Guest</h2>
     <div class="guest-list" v-if="items">
-      <ul v-if="items" :style="`width:${contentWidth * Object.entries(items).length}px;`">
-        <li v-for="(item ,index) in items" :key="`comment${index}`"  :style="`width:${contentWidth}px;`">
+      <ul v-if="items" :style="`width:${guestWidth}px; animation-duration:${guestDuration}s`">
+        <li v-for="(item ,index) in items" :key="`comment${index}`" ref="item">
           <span class="icon" :class="item.target">{{ (item.target === 'bridegroom')? '채성': '수진'}}에게</span>
           {{ item.name }} : {{ item.comment }}
         </li>
@@ -107,12 +107,31 @@ export default {
       comment: '',
       send: false,
       contentWidth: 0,
+      guestWidth: 0,
     }
   },
   mounted() {
     if (this.$firebaseDB) {
       this.fetchData();
       this.contentWidth = (window.outerWidth >= 900) ? 615 : window.outerWidth;
+    }
+  },
+  updated() {
+    if (this.$refs.item) {
+      const allClientWidth = this.$refs.item.map((a) => a.clientWidth);
+      this.guestWidth = allClientWidth.reduce((a, b) => a + b, 0);
+    }
+  },
+  computed: {
+    guestDuration() {
+      return 5 * Object.entries(this.items).length;
+    },
+  },
+  watch: {
+    items: {
+      handler(value) {
+        this.guestWidth = this.contentWidth * Object.entries(value).length
+      }
     }
   },
   methods: {
@@ -198,11 +217,12 @@ export default {
         flex-direction: row;
         position:absolute;
         left:0;
-        animation: infinite 80s guest-animation;
+        animation: infinite linear guest-animation;
         margin:0;
         padding:0;
         li{
-          flex:1 auto;
+          flex:0 auto;
+          padding:0 2rem;
           list-style:none;
           line-height:5rem;
         }

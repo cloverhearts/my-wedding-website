@@ -76,7 +76,7 @@ export default {
     }
   }
   &.action{
-    h3, .wedding-hall-location{
+    h3{
       animation: alternate 2s content-animation;
     }
   }

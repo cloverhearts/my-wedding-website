@@ -35,7 +35,7 @@ export default {
   }
   &.action{
     .gallery{
-      animation: alternate 2s content-animation;
+      /* animation: alternate 2s content-animation; */
     }
   }
 }

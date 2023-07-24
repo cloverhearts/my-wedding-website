@@ -218,7 +218,7 @@ export default {
       }
     }
   &.action{
-    h3, ul{
+    h3{
       animation: alternate 2s content-animation;
     }
   }

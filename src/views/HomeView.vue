@@ -56,13 +56,17 @@ export default {
   },
   methods: {
     scrollEvents() {
-      const viewIndex = this.scrollPosition.findIndex((position) => Math.abs(position) > window.scrollY) - 1;
-      if (this.viewIndex !== viewIndex) {
-        if (document.querySelector(`${this.sectionList[this.viewIndex]}`).classList.contains('action')) {
-          document.querySelector(`${this.sectionList[this.viewIndex]}`).classList.remove('action');
+      try {
+        const viewIndex = this.scrollPosition.findIndex((position) => Math.abs(position) > window.scrollY) - 1;
+        if (this.viewIndex !== viewIndex) {
+          if (document.querySelector(`${this.sectionList[this.viewIndex]}`).classList.contains('action')) {
+            document.querySelector(`${this.sectionList[this.viewIndex]}`).classList.remove('action');
+          }
+          document.querySelector(`${this.sectionList[viewIndex]}`).classList.add('action');
+          this.viewIndex = viewIndex;
         }
-        document.querySelector(`${this.sectionList[viewIndex]}`).classList.add('action');
-        this.viewIndex = viewIndex;
+      } catch (ex) {
+        console.log(ex);
       }
     },
   },

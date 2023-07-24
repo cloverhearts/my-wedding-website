@@ -58,7 +58,7 @@ export default {
   }
   &.action{
     .comment{
-      animation: alternate 2s content-animation;
+      animation: alternate 3s content-animation;
     }
   }
 }
