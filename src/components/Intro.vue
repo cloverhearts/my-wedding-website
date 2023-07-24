@@ -259,7 +259,8 @@ export default {
     section#intro{
       padding-top:2vw;
       background-size:76vh;
-      background-position: center 100%;
+      background-position-x: 50%;
+      background-position-y: 0;
       text-shadow: #fff 1px 1px 5px;
       .intro{
         .wedding-title{
