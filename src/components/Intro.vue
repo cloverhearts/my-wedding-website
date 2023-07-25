@@ -278,9 +278,8 @@ export default {
   @media (orientation: landscape) and (max-width: 920px) {
     section#intro{
       padding-top: calc(50vh - 5.2rem);
-      background-position: center -30vw;
-      background-size:76vw;
-      background-position:center center;
+      background-position: center 40%;
+      background-size:cover;
       min-height:90vh;
       .intro{
         .wedding-title,
