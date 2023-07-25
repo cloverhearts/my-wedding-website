@@ -3,7 +3,7 @@
     <h2>마음을 전하실 곳</h2>
     <div class="box chaesung">
       <div class="for-name chaesung">
-        신랑측.<strong>임채성</strong>
+        신랑 <strong>임채성</strong>
       </div>
       <div class="bank-info">
         <div class="bank-logo">
@@ -12,11 +12,11 @@
           카카오뱅크 3333-08-7916821
         </div>
         <button @click="onClickCopy('chaesung')">
-          신랑측 계좌번호 복사하기
+          신랑 계좌번호 복사하기
         </button>
       </div>
       <div class="for-name chaesung">
-        신랑측 부모님 <strong>임현택</strong>
+        신랑 부모님 <strong>임현택</strong>
       </div>
       <div class="bank-info">
         <div class="bank-logo nh">
@@ -25,13 +25,13 @@
           농협은행 100039-52-094458
         </div>
         <button @click="onClickCopy('chaesungParents')">
-          신랑측 부모님 계좌번호 복사하기
+          신랑 부모님 계좌번호 복사하기
         </button>
       </div>
     </div>
     <div class="box sujin">
       <div class="for-name sujin">
-        신부측.<strong>이수진</strong>
+        신부 <strong>이수진</strong>
       </div>
       <div class="bank-info">
         <div class="bank-logo">
@@ -40,11 +40,11 @@
           카카오뱅크 3333-10-6277225
         </div>
         <button @click="onClickCopy('sujin')">
-          신부측 계좌번호 복사하기
+          신부 계좌번호 복사하기
         </button>
       </div>
       <div class="for-name sujin">
-        신부측 부모님<strong>이용만</strong>
+        신부 부모님 <strong>이용만</strong>
       </div>
       <div class="bank-info">
         <div class="bank-logo kb">
@@ -53,7 +53,7 @@
           국민은행 212-24-0443-154
         </div>
         <button @click="onClickCopy('sujinParent')">
-          신부측 부모님 계좌번호 복사하기
+          신부 부모님 계좌번호 복사하기
         </button>
       </div>
 
