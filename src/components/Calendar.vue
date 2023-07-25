@@ -2,8 +2,8 @@
   <section class="calendar" id="calendar">
     <h2>Calendar</h2>
     <h3>
-      <strong>2023년 9월 9일 토요일,</strong><br/>
-      오후 1시 40분 분당앤스퀘어 아모르홀
+      <strong>2023년 <span>9월</span> <span>9일</span> 토요일,</strong><br/>
+      <span>오후 1시 40분</span> 분당앤스퀘어 아모르홀
       <!-- 09月09日 -->
     </h3>
     <ul class="calendar">
@@ -156,7 +156,18 @@ export default {
     h3{
       font-family: 'Nanum Myeongjo', serif;
       line-height:1.5;
+      font-size:1.2rem;
       strong{
+        span{
+          display:inline-block;
+          animation: infinite 2s tick-tock;
+          &:first-child{
+            animation-delay: 1s;
+          }
+        }
+      }
+      span{
+        animation: infinite 5s color-text;
         font-size:1.5rem;
       }
     }
@@ -223,4 +234,26 @@ export default {
     }
   }
   }
+    @keyframes color-text {
+      0% {
+        color:rgb(132, 58, 58);
+      }
+      50% {
+        color:rgb(212, 116, 116);
+      }
+      100% {
+        color:rgb(132, 58, 58);
+      }
+    }
+    @keyframes tick-tock {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
 </style>

@@ -60,7 +60,6 @@ html body {
     margin: 0 auto;
     border-radius: 10px;
     section{
-      min-height:80vh;
       padding: 10rem 5vw;
       h2{
         margin:0 0 6vw 0;

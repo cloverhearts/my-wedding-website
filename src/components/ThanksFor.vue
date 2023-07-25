@@ -15,13 +15,25 @@
           신랑측 계좌번호 복사하기
         </button>
       </div>
-
+      <div class="for-name chaesung">
+        신랑측 부모님 <strong>임현택</strong>
+      </div>
+      <div class="bank-info">
+        <div class="bank-logo nh">
+        </div>
+        <div class="bank-script">
+          농협은행 100039-52-094458
+        </div>
+        <button @click="onClickCopy('chaesungParents')">
+          신랑측 부모님 계좌번호 복사하기
+        </button>
+      </div>
     </div>
     <div class="box sujin">
       <div class="for-name sujin">
         신부측.<strong>이수진</strong>
       </div>
-      <div class="bank-info">
+      <div class="bank-info kb">
         <div class="bank-logo">
         </div>
         <div class="bank-script">
@@ -29,6 +41,19 @@
         </div>
         <button @click="onClickCopy('sujin')">
           신부측 계좌번호 복사하기
+        </button>
+      </div>
+      <div class="for-name sujin">
+        신부측 부모님<strong>이용만</strong>
+      </div>
+      <div class="bank-info">
+        <div class="bank-logo">
+        </div>
+        <div class="bank-script">
+          국민은행 212-24-0443-154
+        </div>
+        <button @click="onClickCopy('sujinParent')">
+          신부측 부모님 계좌번호 복사하기
         </button>
       </div>
 
@@ -47,6 +72,8 @@ export default {
       bank: {
         chaesung: { forname: '신랑', account: '3333087916821' },
         sujin: { forname: '신부', account: '3333106277225' },
+        chaesungParents: { forname: '신랑 부모님', account: '10003952094458' },
+        sujinParent: { forname: '신부 부모님', account: '212240443154' },
       }
     }
   },
@@ -124,6 +151,7 @@ export default {
   .bank-info {
     display: block;
     position: relative;
+    margin-bottom:1rem;
 
     button {
       min-width: 100%;
@@ -149,6 +177,12 @@ export default {
       -moz-border-radius: 0.2rem;
       border-radius: 0.2rem;
       background: #FFE300;
+      &.nh{
+        background: #0ea34c;
+      }
+      &.kb{
+        background: #60584d;
+      }
     }
     .bank-script {
       display: block;
@@ -157,6 +191,7 @@ export default {
       left:0;
       font-size: 1.1rem;
       z-index: 1;
+      text-align: left;
     }
   }
 }
