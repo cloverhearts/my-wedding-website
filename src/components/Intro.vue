@@ -280,7 +280,7 @@ export default {
       padding-top: calc(50vh - 5.2rem);
       background-position: center -30vw;
       background-size:76vw;
-      background-position:center -60vh;
+      background-position:center center;
       min-height:90vh;
       .intro{
         .wedding-title,

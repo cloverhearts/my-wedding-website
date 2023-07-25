@@ -33,7 +33,7 @@
       <div class="for-name sujin">
         신부측.<strong>이수진</strong>
       </div>
-      <div class="bank-info kb">
+      <div class="bank-info">
         <div class="bank-logo">
         </div>
         <div class="bank-script">
@@ -47,7 +47,7 @@
         신부측 부모님<strong>이용만</strong>
       </div>
       <div class="bank-info">
-        <div class="bank-logo">
+        <div class="bank-logo kb">
         </div>
         <div class="bank-script">
           국민은행 212-24-0443-154
