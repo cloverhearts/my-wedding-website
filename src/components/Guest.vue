@@ -214,7 +214,7 @@ export default {
       ul{
         display:flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: row-reverse;
         position:absolute;
         left:0;
         animation: infinite linear guest-animation;
