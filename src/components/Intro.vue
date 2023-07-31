@@ -55,8 +55,8 @@ export default {
     align-items: flex-start;
     justify-content: center;
     box-sizing:border-box;
-    min-height: 92vh;
-    padding: 3rem;
+    min-height: 97vh;
+    padding: 1rem;
     background: transparent url("../assets/wedding-main.jpeg") no-repeat;
     background-size: cover;
     background-position: center center;
@@ -79,7 +79,7 @@ export default {
           display:block;
           border-bottom:1px solid rgba(51,51,51,0.5);
           &:first-child{
-            width:20vw;
+            width:23vw;
             margin: 0 auto 1vw;
             font-size: 2rem;
           }
