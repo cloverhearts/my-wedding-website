@@ -60,7 +60,7 @@ export default {
     background: transparent url("../assets/wedding-main.jpeg") no-repeat;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     .intro {
       overflow:hidden;
       flex: 1;
